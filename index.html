@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Author Network – Force Layout (D3.js)</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</head>
+<body>
+  <header>
+    <h1>Author Network – Force Layout (D3.js)</h1>
+    <p class="subtitle">Hue = Affiliation Country (Top 10 colored; others gray)</p>
+  </header>
+
+  <section id="controls">
+    <div class="control">
+      <label for="charge">Charge (forceManyBody): <span id="chargeVal"></span></label>
+      <input type="range" id="charge" min="-200" max="-5" step="1" value="-80" />
+    </div>
+    <div class="control">
+      <label for="collide">Collide radius ×: <span id="collideVal"></span></label>
+      <input type="range" id="collide" min="0.8" max="2.5" step="0.05" value="1.2" />
+    </div>
+    <div class="control">
+      <label for="linkStrength">Link strength: <span id="linkStrengthVal"></span></label>
+      <input type="range" id="linkStrength" min="0" max="2" step="0.01" value="0.6" />
+    </div>
+  </section>
+
+  <main>
+    <div id="chart-area">
+      <svg id="chart"></svg>
+      <div id="tooltip" class="hidden"></div>
+    </div>
+    <aside id="legend"></aside>
+  </main>
+
+  <footer>
+    <p>Instructions: Hover a node to emphasize authors from the same country; click a node for details.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
