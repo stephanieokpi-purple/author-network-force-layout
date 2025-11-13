@@ -7,7 +7,7 @@ const RADIUS_RANGE = [3, 12];
 const FALLBACK_GRAY = '#A9A9A9'; // for non-top-10 countries
 
 // === Load Data ===
-d3.json('data/authors_network.json').then(raw => {
+d3.json("authors_network.json").then(graph => {
 
   // Expect: { nodes:[{id,name,affiliation,country}], links:[{source,target,weight}] }
   const nodes = raw.nodes.map(d => ({ ...d }));
@@ -218,3 +218,4 @@ d3.json('data/authors_network.json').then(raw => {
   });
 
 });
+
