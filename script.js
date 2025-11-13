@@ -8,6 +8,7 @@ const FALLBACK_GRAY = '#A9A9A9'; // for non-top-10 countries
 
 // === Load Data ===
 d3.json("authors_network.json").then(graph => {
+const raw = graph;
 
   // Expect: { nodes:[{id,name,affiliation,country}], links:[{source,target,weight}] }
   const nodes = raw.nodes.map(d => ({ ...d }));
@@ -218,5 +219,6 @@ d3.json("authors_network.json").then(graph => {
   });
 
 });
+
 
 
